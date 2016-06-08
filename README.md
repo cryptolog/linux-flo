@@ -30,7 +30,12 @@ Debian Stretch ARMHF tutorial
     *  
 3. Kernel
   I use ElementalX for best CPU and GPU performance.
+ * Download config and patches
+ * root@porteus:# git clone https://github.com/Szybol7/linux-flo.git
  * Download ElementalX from https://github.com/flar2/flo/archive/ElementalX-5.00.zip
- * Extract archive using command: unzip flo-ElementalX-5.00.zip
+ * Extract archive using command:
+ * root@porteus:# unzip flo-ElementalX-5.00.zip
+ * Copy config file:
+ * root@porteus:# mv linux-flo/config flo-ElementalX-5.00/.config
 root@porteus:# cd flo-ElementalX-5.00
 
