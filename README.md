@@ -27,3 +27,10 @@ Debian Stretch ARMHF tutorial
     * toor
     *  sudo apt-get install
     *  sudo apt-get install mate [lxde,xfce4,plasma-desktop,]
+    *  
+3. Kernel
+  I use ElementalX for best CPU and GPU performance.
+ * Download ElementalX from https://github.com/flar2/flo/archive/ElementalX-5.00.zip
+ * Extract archive using command: unzip flo-ElementalX-5.00.zip
+root@porteus:# cd flo-ElementalX-5.00
+
