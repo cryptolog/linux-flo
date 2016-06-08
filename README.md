@@ -1,10 +1,8 @@
-Debian Jessie ARMHF tutorial
-
-
+Debian Stretch ARMHF tutorial
 
 1. Need software:
   * Linux Deploy
-  * bVNC
+  * bVNC or ConnectBot
 
 2. Download rootfs steps:
   * Install Linux Deploy
@@ -23,7 +21,7 @@ Debian Jessie ARMHF tutorial
     *  VNC Server : localhost
     *  VNC Username : android
     *  VNC Password : android
-  * If you are connected on ssh type:
+  * If you are connected type:
     *  sudo passwd
     * toor
     * toor
