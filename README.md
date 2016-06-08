@@ -47,13 +47,15 @@ Debian Stretch ARMHF tutorial
  * root@porteus:# patch -p1 < ../flo-ElementalX-5.00.patch
 
 Open terminal in folder flo-ElementalX-5.00 and type:
-export ARCH=arm
-export SUBARCH=arm
-export CROSS_COMPILE=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
-export PATH=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/:$PATH
+* root@porteus:# export ARCH=arm
+* root@porteus:# export SUBARCH=arm
+* root@porteus:# export CROSS_COMPILE=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+* root@porteus:# export PATH=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/:$PATH
 
 Time to compile kernel.
 * root@porteus:# make -j3
 
 Install modules and firmware:
 * root@porteus:# make modules_install INSTALL_MOD_PATH=../modules && make firmware_install INSTALL_FW_PATH=../firmware
+
+Kernel and modules is ready.
