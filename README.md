@@ -10,7 +10,7 @@ Debian Stretch ARMHF tutorial
     - click on arrow in linux deploy
     - Select:
     *  Distribution : Debian
-    *  Distribution suite : jessie
+    *  Distribution suite : stretch
     *  Architecture : armhf
     *  Instalation path : /sdcard/root.img
     *  User password : android
@@ -35,7 +35,25 @@ Debian Stretch ARMHF tutorial
  * Download ElementalX from https://github.com/flar2/flo/archive/ElementalX-5.00.zip
  * Extract archive using command:
  * root@porteus:# unzip flo-ElementalX-5.00.zip
+ * Download gcc linaro from: https://releases.linaro.org/components/toolchain/binaries/4.9-2016.02/arm-linux-gnueabihf/gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+ * Extract archive using command:
+ * root@porteus:# tar -C ./ -xpzvf ./gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
  * Copy config file:
  * root@porteus:# mv linux-flo/config flo-ElementalX-5.00/.config
-root@porteus:# cd flo-ElementalX-5.00
+ * Copy patch:
+ * root@porteus:# mv linux-flo/flo-ElementalX-5.00.patch flo-ElementalX-5.00.patch
+ Apply patch:
+ * root@porteus:# cd flo-ElementalX-5.00
+ * root@porteus:# patch -p1 < ../flo-ElementalX-5.00.patch
 
+Open terminal in folder flo-ElementalX-5.00 and type:
+export ARCH=arm
+export SUBARCH=arm
+export CROSS_COMPILE=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+export PATH=../gcc-linaro-4.9-2016.02-x86_64_arm-linux-gnueabihf/bin/:$PATH
+
+Time to compile kernel.
+* root@porteus:# make -j3
+
+Install modules and firmware:
+* root@porteus:# make modules_install INSTALL_MOD_PATH=../modules && make firmware_install INSTALL_FW_PATH=../firmware
